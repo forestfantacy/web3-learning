@@ -1,0 +1,79 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "changeByMemory",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "changeByStorage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "students",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/storage_memory.sol": "C1"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/storage_memory.sol": {
+			"keccak256": "0xd7aaa42cf6882569b4c0c4fddea8a318a40b289d6ade0e2d01d0867a74a906b0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://020f2afa8b645bf56da5abc0b119e8edd033c07853bb7a05938da701ee7ab4b5",
+				"dweb:/ipfs/QmQ1mm2pwA4xR27gHxh7mSx2ZjGjDKn64P2nRouSS58yga"
+			]
+		}
+	},
+	"version": 1
+}
