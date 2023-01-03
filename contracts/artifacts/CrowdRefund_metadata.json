@@ -54,6 +54,29 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "createRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "doRefund",
 				"outputs": [],
@@ -100,6 +123,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestNo",
+						"type": "uint256"
+					}
+				],
+				"name": "makePayment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "minContribution",
 				"outputs": [
@@ -127,11 +163,70 @@
 			},
 			{
 				"inputs": [],
+				"name": "numRequests",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "raisedAmount",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "refund",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "completed",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "noOfVotes",
 						"type": "uint256"
 					}
 				],
@@ -152,6 +247,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestNo",
+						"type": "uint256"
+					}
+				],
+				"name": "voteRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -164,6 +272,7 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
+			"notice": "多人筹款 对款项花销投票，票数过半，管理员可以执行下单",
 			"version": 1
 		}
 	},
@@ -184,11 +293,11 @@
 	},
 	"sources": {
 		"contracts/crowdrefund.sol": {
-			"keccak256": "0x03c9d37adcc7f3626f7262cf321bc97d3ed9c182f716ccce2511040cc7e92c7d",
+			"keccak256": "0xbb27d5de58756b4c747fa33ddcfe3b93cc555ef0935826939fae6cd98c3b6d5f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9ef2288fba361672b62a5e4aa125b1952fc9601beed4f7fe149427ba7024a4c9",
-				"dweb:/ipfs/QmYzwTygfHbVnJxCEs6XCteQb5ZSsL1nT4iBpt8wkuvXw4"
+				"bzz-raw://e81c5f98662454a29626cba8445edfad9c2c0d1ce6538a21d9237a6a519a27da",
+				"dweb:/ipfs/QmX2Qq5q54yuYXKr5HGAaf1MGHaeTWRJkyTJwNtybAwo7Y"
 			]
 		}
 	},
