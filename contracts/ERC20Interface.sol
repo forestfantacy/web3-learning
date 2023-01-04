@@ -57,7 +57,7 @@ contract Crytos is ERC20Interface{
     /**
     代币转账  把自己的代币直接转给收款方
     */
-    function transfer(address to, uint tokens) public override returns(bool success){
+    function transfer(address to, uint tokens) public virtual override returns(bool success){
         require(balances[msg.sender] >= tokens);
 
         balances[to] += tokens;
@@ -90,7 +90,7 @@ contract Crytos is ERC20Interface{
     /**
     债权方调用：把债务方的钱转到指定收款方
     */
-    function transferFrom(address from, address to, uint tokens) override external returns(bool success){
+    function transferFrom(address from, address to, uint tokens)public virtual override returns(bool success){
         //
         require(allowed[from][msg.sender] >= tokens);
         //
@@ -105,6 +105,101 @@ contract Crytos is ERC20Interface{
 
 
         emit Transfer(from, to, tokens);
+        return true;
+    }
+
+}
+
+
+contract CrytisICO is Crytos{
+
+    address public admin;
+    address payable public deposit;
+    uint tokenPrice = 0.001 ether;
+    uint public hardCap = 300 ether;
+    uint public raisedAmount;
+    uint public saleStart = block.timestamp;
+    uint public saleEnd = block.timestamp + 604800;
+    uint public tokenTradeStart = saleEnd + 604800;
+    uint public maxInvestment = 5 ether;
+    uint public minInvestment = 0.1 ether;
+
+    enum State{beforeStart, running, afterEnd, halted}
+    State public icoState;
+
+    constructor(address payable _deposit){
+        deposit = _deposit;
+        admin = msg.sender;
+        icoState = State.beforeStart;
+    }
+    
+    modifier onlyAdmin(){
+        require(msg.sender == admin);
+        _;
+    }
+
+    function halt() public onlyAdmin{
+        icoState = State.halted;
+    }
+
+    function resume() public onlyAdmin{
+        icoState = State.running;
+    }
+
+    function changeDeposiAddress(address payable newDeposit) public onlyAdmin{
+        deposit = newDeposit;
+    }
+
+    function getCurrentState() public view returns(State){
+        if(icoState == State.halted){
+            return State.halted;
+        }else if(block.timestamp < saleStart){
+            return State.beforeStart;
+        }else if(block.timestamp >= saleStart && block.timestamp <= saleStart){
+            return State.running;
+        }else{
+            return State.afterEnd;
+        }
+    }
+
+    event Invest(address investor, uint value, uint tokens);
+
+    /**
+        投资方调用
+        更新已收款金额，按照代币价格计算代币数量，更新投资方和发起人的代币余额，将收款转到存款专用账户
+    */
+    function invest() payable public returns(bool){
+        icoState = getCurrentState();
+        require(icoState == State.running);
+
+        require(msg.value >= minInvestment && msg.value <= maxInvestment);
+        raisedAmount += msg.value;
+        require(raisedAmount <= hardCap);
+
+        uint tokens = msg.value / tokenPrice;
+
+        balances[msg.sender] += tokens;
+        balances[founder] -= tokens;
+        deposit.transfer(msg.value);
+        emit Invest(msg.sender, msg.value, tokens);
+
+        return true;
+    }
+
+    receive() payable external{
+        invest();
+    }
+
+    //转账
+    function transfer(address to, uint tokens) public override returns(bool success){
+        require(block.timestamp > tokenTradeStart);
+        Crytos.transfer(to, tokens);// super.transfer(to, tokens);
+        return true;
+    }
+
+    function transferFrom(address from, address to, uint tokens) public override returns(bool success){
+        require(block.timestamp > tokenTradeStart);
+        Crytos.transferFrom(from, to, tokens);
         return true;
     }
 }
