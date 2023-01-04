@@ -22,6 +22,50 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "contributeEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "createRequestEvent",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "admin",
 				"outputs": [
@@ -32,6 +76,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "contribute",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -74,13 +125,6 @@
 				"name": "createRequest",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "doRefund",
-				"outputs": [],
-				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -293,11 +337,11 @@
 	},
 	"sources": {
 		"contracts/crowdrefund.sol": {
-			"keccak256": "0xbb27d5de58756b4c747fa33ddcfe3b93cc555ef0935826939fae6cd98c3b6d5f",
+			"keccak256": "0x496e7bbe85251d3e6ed2185782fa748e13726f4082306d94d0b3d2e715949dba",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e81c5f98662454a29626cba8445edfad9c2c0d1ce6538a21d9237a6a519a27da",
-				"dweb:/ipfs/QmX2Qq5q54yuYXKr5HGAaf1MGHaeTWRJkyTJwNtybAwo7Y"
+				"bzz-raw://4fee0dab4c67d8a8cd87bcc9f34d032d570e1b748bb48fb389b3c50e4a0d7e96",
+				"dweb:/ipfs/QmQid6Vz9mxRh2TTyLWKU1H88EneyvLZ4ALbhannKms1Dp"
 			]
 		}
 	},

@@ -41,11 +41,11 @@ contract CrowdRefund {
     }
 
     receive() external payable {
-        doRefund();
+        contribute();
     }
 
     // 捐款者发起转账，当前合约收到钱，更新全局变量
-    function doRefund() public payable {
+    function contribute() public payable {
         require(block.timestamp >= startTime && block.timestamp < endTime);
         require(msg.value >= minContribution);
 
@@ -55,6 +55,9 @@ contract CrowdRefund {
 
         raisedAmount += msg.value;
         contributors[msg.sender] += msg.value;
+
+        //给前端发消息
+        emit contributeEvent(msg.sender, msg.value);
     }
 
     // 查询已筹款金额
@@ -85,6 +88,8 @@ contract CrowdRefund {
 
         newRequest.completed = false;
         newRequest.noOfVotes = 0;
+
+        createRequestEvent(_description, _recipient, _value);
     }
 
     // 捐款者身份,为指定提案投票
@@ -107,4 +112,8 @@ contract CrowdRefund {
         thisRequest.completed = true;
 
     }
+
+    event contributeEvent(address _sender, uint _value);
+    event createRequestEvent(string _description, address _recipient, uint _value);
+
 }
