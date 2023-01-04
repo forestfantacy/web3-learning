@@ -197,7 +197,7 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "a b c 下游 二级供应商 一级供应商 b 要给c付钱，但自己没钱，于是b要a给c付钱，事先跟a商量好，并且a有b的债务",
+			"notice": "a b c 下游 二级供应商 一级供应商 b 要给c付钱，但自己没钱，于是b要a给c付钱，事先跟a商量好，并且a有b的债务 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db",
 			"version": 1
 		}
 	},
@@ -218,11 +218,11 @@
 	},
 	"sources": {
 		"contracts/ERC20Interface.sol": {
-			"keccak256": "0xb080ef5f0912142cf417a211244edab9eceafa21abaa55f3910f6c041795dc91",
+			"keccak256": "0x14af33245dd4af6219668fed2ee18af846e86627c39faf451ca87844254bb5be",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://69cf02e6c9954448c44e0bea804908558867b38a6ed6cef167dbadbfac856a51",
-				"dweb:/ipfs/QmefP7u4dxqGFE2MfhjXAz6krvfyCB779sLdPt92JMonJh"
+				"bzz-raw://73f5601f88a1c7ca8900a2e511bb04d159f2f5bb7c5f1485c790eeb173c77d58",
+				"dweb:/ipfs/Qmdr1mdRZMwQauFFBWg5yaAFRpfd6BGzQ1grG9t4wMZVAx"
 			]
 		}
 	},
