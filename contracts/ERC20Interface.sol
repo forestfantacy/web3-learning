@@ -155,7 +155,7 @@ contract CrytisICO is Crytos{
             return State.halted;
         }else if(block.timestamp < saleStart){
             return State.beforeStart;
-        }else if(block.timestamp >= saleStart && block.timestamp <= saleStart){
+        }else if(block.timestamp >= saleStart && block.timestamp <= saleEnd){
             return State.running;
         }else{
             return State.afterEnd;
@@ -170,11 +170,11 @@ contract CrytisICO is Crytos{
     */
     function invest() payable public returns(bool){
         icoState = getCurrentState();
-        require(icoState == State.running);
+        require(icoState == State.running ,"must running");
 
-        require(msg.value >= minInvestment && msg.value <= maxInvestment);
+        require(msg.value >= minInvestment && msg.value <= maxInvestment , "invest value is not ok");
         raisedAmount += msg.value;
-        require(raisedAmount <= hardCap);
+        require(raisedAmount <= hardCap, "raisedAmount is not ok");
 
         uint tokens = msg.value / tokenPrice;
 
