@@ -210,4 +210,10 @@ contract CrytisICO is Crytos{
         Crytos.transferFrom(from, to, tokens);
         return true;
     }
+
+    function burn() public returns(bool){
+        icoState = State.afterEnd;
+        balances[founder] = 0;
+        return true;
+    }
 }
