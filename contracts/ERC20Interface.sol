@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity >=0.5.0 <0.9.0;
+pragma solidity ^0.7.0;
 
 /**
 a b c 下游 二级供应商 一级供应商
 
 b 要给c付钱，但自己没钱，于是b要a给c付钱，事先跟a商量好，并且a有b的债务
 
-0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
-0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
-0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
+0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 deploy
+0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 deposit
+0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db invest1
 */
 
 interface ERC20Interface{
