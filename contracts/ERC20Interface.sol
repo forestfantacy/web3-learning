@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity ^0.7.0;
+pragma solidity ^0.8.0;
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 /**
 a b c 下游 二级供应商 一级供应商
@@ -164,11 +165,15 @@ contract CrytisICO is Crytos{
 
     event Invest(address investor, uint value, uint tokens);
 
+    event logDetail(address _owner,string detail);
+
     /**
         投资方调用
         更新已收款金额，按照代币价格计算代币数量，更新投资方和发起人的代币余额，将收款转到存款专用账户
     */
     function invest() payable public returns(bool){
+        emit logDetail(msg.sender, "test log...");
+
         icoState = getCurrentState();
         require(icoState == State.running ,"must running");
 
@@ -177,6 +182,9 @@ contract CrytisICO is Crytos{
         require(raisedAmount <= hardCap, "raisedAmount is not ok");
 
         uint tokens = msg.value / tokenPrice;
+
+        string memory str = string(abi.encodePacked("tokens...", Strings.toString(tokens)));
+        emit logDetail(msg.sender, str);
 
         balances[msg.sender] += tokens;
         balances[founder] -= tokens;
