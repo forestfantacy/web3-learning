@@ -470,7 +470,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/mytransfernft.sol": "MyToken"
+			"contracts/mytransfernft.sol": "MyTransfernft"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -589,11 +589,19 @@
 			]
 		},
 		"contracts/mytransfernft.sol": {
-			"keccak256": "0x7ca8bacc6d411f7da2074126b4343586a377c352b6feaee18e3ba3bea369eb65",
+			"keccak256": "0x2716e745069486d63fd6820b6bb73f3a304bdab128d6bc9838252a02bf384eb1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eeb18dc652da8bb7ce26da172c8fae3ce121c7111614cd70392a5e74cb5c4ecf",
-				"dweb:/ipfs/Qmc9fgf9qBZw47tXoG3z4oAcN3uzNUUzUGpUARTnKihbS5"
+				"bzz-raw://65e38834804e171fdbb1db5f807c2970649106ef562a3f9c1c8cb8f518c05d05",
+				"dweb:/ipfs/QmW2GisF3PVoJFxZzCFD7NqyaSh8UPvxXU2hG1TwJdx9bL"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
+				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
 			]
 		}
 	},

@@ -470,7 +470,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/mytransfernft.sol": "MyToken"
+			"contracts/mytransfernft.sol": "MyTransfer"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -589,11 +589,11 @@
 			]
 		},
 		"contracts/mytransfernft.sol": {
-			"keccak256": "0x7ca8bacc6d411f7da2074126b4343586a377c352b6feaee18e3ba3bea369eb65",
+			"keccak256": "0xbfc44fde88526a351bab8f53c7f12f59e7dcb3d2b358029f326f3ebc1b6e5014",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://eeb18dc652da8bb7ce26da172c8fae3ce121c7111614cd70392a5e74cb5c4ecf",
-				"dweb:/ipfs/Qmc9fgf9qBZw47tXoG3z4oAcN3uzNUUzUGpUARTnKihbS5"
+				"bzz-raw://a70243ca06bc7483eb951dab62659dd9f25f650d0423abf0e18b1129586e92f0",
+				"dweb:/ipfs/QmarMTkvxCSBCimyUPfAv4yMZ8Jj7NLR3AH3tACqf7CEwz"
 			]
 		}
 	},
