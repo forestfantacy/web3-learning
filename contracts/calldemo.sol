@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
+/**
+转账场景，接受者是个合约，需要显示payable，否则不能接受发起方转账，有1个例外：发起者自毁
+*/
 contract Receiver {
     event Received(address caller, uint256 amount, string message);
 
